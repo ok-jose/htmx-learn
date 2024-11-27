@@ -2,20 +2,27 @@
   "name": "htmx-learn",
   "version": "1.0.50",
   "scripts": {
-    "dev": "bun --hot src/index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "concurrently \"bun run build:dev\" \"bun --hot www/bin.ts\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:dev": "vite build --mode=development --watch"
   },
   "dependencies": {
     "@elysiajs/html": "^1.1.1",
     "@elysiajs/static": "^1.1.1",
+    "@elysiajs/swagger": "^1.1.6",
+    "@hotwired/stimulus": "^3.2.2",
     "elysia": "latest",
     "pino": "^9.5.0",
     "pino-pretty": "^13.0.0"
   },
   "devDependencies": {
     "bun-types": "latest",
+    "concurrently": "^9.1.0",
+    "postcss": "^8.4.49",
+    "rollup-plugin-copy": "^3.5.0",
     "tailwindcss": "^3.4.15",
-    "typed-htmx": "^0.3.1"
+    "typed-htmx": "^0.3.1",
+    "vite": "^6.0.1"
   },
   "module": "src/index.js"
 }

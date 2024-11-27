@@ -1,0 +1,1 @@
+document.addEventListener("htmx:afterOnLoad",()=>{const e=new URLSearchParams(window.location.search),t=document.querySelector('[data-controller="search-card"]')?.getAttribute("data-search-card-id-value");t&&(e.set("id",t),window.history.replaceState({},"",`${window.location.pathname}?${e}`))}),document.addEventListener("htmx:timeout",function(){alert("ww")});

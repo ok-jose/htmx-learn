@@ -1,12 +1,14 @@
 import { Elysia } from 'elysia';
 import { html } from '@elysiajs/html';
 import { staticPlugin } from '@elysiajs/static';
+import { swagger } from '@elysiajs/swagger';
 import { logger } from './utils/logger';
 import { apiRouter } from './routes/api';
 import { pageRouter } from './routes/page';
 
 const app = new Elysia()
   .use(html())
+  .use(swagger())
   .use(
     staticPlugin({
       prefix: '',
